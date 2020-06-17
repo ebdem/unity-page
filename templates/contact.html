@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block content %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image:  url('{% static "img/contact.jpg" %}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Benimle İletişime Geçin</h1>
+            <span class="subheading">Sorularınız</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Temasa geçmek ister misiniz? Bana bir mesaj göndermek için aşağıdaki formu doldurun, en kısa sürede size geri döneceğim!</p>
+        
+        <div class="form-group">
+
+              {% if messages %}
+
+          
+            <div class="alert alert-success">
+                  {% for message in messages %}
+                  {{ message }}
+                  {% endfor %}
+
+
+
+            </div>
+              {% endif %}
+             
+          </ul>
+        </div>
+
+
+
+
+
+
+        <form method="POST" novalidate>
+          {% csrf_token %}
+
+
+         <!-- {{ form }}-->
+
+     {% for field in form.visible_fields %}     
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                {{ field.label_tag }}
+
+                {% if form.is_bound %}
+                    {% if field.errors %}
+                        {% render_field field class="form-control is-invalid" %}
+                        {% for error in field.errors %}
+                           <div class="invalid-feedback">
+                               <p>Kank Burayı Doldurman Gerek</p>
+                            </div>
+                        {% endfor %}
+                    {% else %}  
+                        {% render_field field class="form-control is-valid" %}
+                    {% endif %}
+                {% else %}   
+                        {% render_field field class="form-control" %}
+                {% endif %}        
+            </div>
+          </div>
+
+      {% endfor %}    
+
+
+
+
+
+
+
+          <br>
+          <div id="success"></div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-outline-dark rounded" id="sendMessageButton">Send</button>
+          </div>
+         
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  {% endblock content %}

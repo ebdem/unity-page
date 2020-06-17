@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{%static "img/markus-spiske-qjnAnF0jIGk-unsplash.jpg" %}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Hakkında</h1>
+            <span class="subheading">Biz Ne yaparız</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section id="whoweare" class="section-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 text-center" >
+          <div class="section-top">
+            <h2>BİZ KİMİZ ?</h2>
+
+            <hr>
+            <p class="text-center text-uppercase">Center aligned text on all viewport sizes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-deck">
+        <div class="card text-white bg-warning">
+          
+          <div class="card-body">
+            <h5 class="card-title"> <i class="fas fa-book" style="margin-left: 150px;"></i></h5>
+            <h3 class="card-title" style="text-decoration:underline; "> ÖZGÜRLÜK  </h3>
+            
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          
+        </div>
+        <div class="card text-white bg-success">
+         
+          <div class="card-body">
+            <h5 class="card-title"> <i class="fas fa-balance-scale" style="margin-left: 150px;"></i></h5>
+            <h3 class="card-title" style="text-decoration:underline; "> ÖZGÜRLÜK  </h3>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          
+        </div>
+        <div class="card text-white bg-danger">
+          
+          <div class="card-body">
+            <h5 class="card-title"> <i class="fas fa-bomb" style="margin-left: 150px;"></i></h5>
+            <h3 class="card-title" style="text-decoration:underline; "> ÖZGÜRLÜK  </h3>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+      
+  </section>
+
+
+  <hr>
+  
+
+  
+  {% endblock content %}
